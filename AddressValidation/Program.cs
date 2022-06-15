@@ -8,6 +8,7 @@ namespace USPSApi_CLI
 	{
 		public static void Main()
 		{
+			var addressid = "0";
 			var address1 = "2335 S State";
 			var address2 = "Suite 300";
 			var city = "Provo";
@@ -19,7 +20,7 @@ namespace USPSApi_CLI
 					new XAttribute("USERID", "886LIGHT7477"),
 					new XElement("Revision", "1"),
 					new XElement("Address",
-						new XAttribute("ID", "0"),
+						new XAttribute("ID", addressid),
 						new XElement("Address1", address1),
 						new XElement("Address2", address2),
 						new XElement("City", city),
@@ -55,7 +56,6 @@ namespace USPSApi_CLI
 						var rstate = GetXMLElement(element, "State");
 						var rzip5 = GetXMLElement(element, "Zip5");
 						var rzip4 = GetXMLElement(element, "Zip4");
-						Console.WriteLine(raddress1);
 						Console.WriteLine("-------------------------------");
 						Console.WriteLine("Address ID:	" + raddressid);
 						Console.WriteLine("Address1:	" + raddress1);
